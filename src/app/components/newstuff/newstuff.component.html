@@ -1,0 +1,25 @@
+
+  <h2 class = 'formatcard' matDialogTitile>Yello {{age}} </h2>
+  <mat-dialog-content>
+
+      <mat-form-field class="example-full-width">
+          <input matInput placeholder="Age:" [(ngModel)]="age" type="number">
+        </mat-form-field>
+  <button routerLink ="" mat-raised-button color ="primary" > Back</button>
+  <button routerLink ="" mat-raised-button color ="primary" (click)="hide = !hide" >Hide or Unhide</button>
+  <div *ngFor="let joke of jokes" [hidden]= "hide" >{{1+1}}:{{jokes}}</div>
+
+  
+</mat-dialog-content>
+
+<mat-card  class = "divback">
+  <mat-card class = "newcard" >Wait for it</mat-card>
+  <mat-card-content><img mat-card-image  src ="../../../assets/chair2.jpg" />
+  </mat-card-content>
+  <mat-card-actions><button>
+      wait
+  </button>
+</mat-card-actions>
+  
+  
+</mat-card>

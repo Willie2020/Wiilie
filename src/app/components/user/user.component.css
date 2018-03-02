@@ -1,0 +1,108 @@
+.example-spacer {
+  flex: 11 auto;
+}
+
+.nice {
+  background-color: rgb(10, 240, 248);
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 40%;
+}
+
+.space {
+  width: 1%;
+}
+
+.myfont {
+  color: rgb(7, 152, 196);
+}
+
+.myspacing {
+  width: 80%;
+  /* transform: translateX(20px); */
+  transform-origin: center;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(160, 50, 250, 0.103);
+}
+
+.myspacingnew {
+  width: 80%;
+  /* transform: translateX(20px); */
+  transform-origin: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  background-color: rgba(160, 50, 250, 0.103);
+}
+
+.mymargin {
+  margin-left: 55px;
+}
+
+.mywidth {
+  width: auto;
+  height: auto;
+}
+
+.bgcolornew {
+  /*background-color:rgb(61, 188, 226);*/
+  background: radial-gradient(ellipse at center, rgba(0,183,234,1) 0%,rgba(0,158,195,1) 100%);
+  /*background-image: url("../../../assets/t-gradient.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;*/
+}
+
+.buttoncol{
+  background-color: rgba(0, 166, 207, 0.103);
+  color:green;
+}
+
+.colclass{
+  color:rgba(255, 255, 255, 0.205);
+  background-color: #00A6CF;
+  border-bottom-style: solid;
+}
+
+.btcol2
+{
+  background-color: rgba(0, 166, 207, 0.103);
+  color:white;
+}
+
+.example-container {
+  display: flex;
+  width: relative;
+  height: relative;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.example-sidenav-content {
+  display: flex;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.example-sidenav {
+  padding: 40px;
+
+}
+
+.picbutton{
+  background-size: cover;
+  background-color: rgba(0, 166, 207, 0.103);
+  
+}
+
+.imagefit{
+  size: stretch;
+  
+}

@@ -1,0 +1,141 @@
+<body class ="bgcolornew" >
+<mat-toolbar class="colclass" >
+  <mat-toolbar-row>
+    <button mat-icon-button (click) ="drawer.toggle()" width="20px" color ="white"><mat-icon><img src ="../../../assets/simsc.svg" /></mat-icon></button>
+    <span>The Art of Wilson</span>
+    <span class="example-spacer"></span>
+
+    <button class = "btcol2" mat-button [matMenuTriggerFor]= "mymenu" >Art Portfolio</button>
+    <button routerLink ="/newstuff" class = "btcol2" mat-button >Gallery</button>
+    <span class="space"> </span>
+    <button class = "btcol2" mat-button >Contact</button>
+    <span class="space"> </span>
+    <button class = "btcol2" mat-button>About me</button>
+    <span class="space"> </span>
+    
+    <mat-menu xPostion ="20px" #mymenu="matMenu">
+      <button mat-menu-item>Barn Yard</button>
+      <button mat-menu-item>Sphere drone</button>
+      <button mat-menu-item>BattleShip</button>
+    </mat-menu>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-drawer-container class="example-container">
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+      <p>Auto-resizing sidenav</p>
+    </mat-drawer>
+      <ngb-carousel class ="mywidth">
+          <!-- picture slider -->
+        <ng-template ngbSlide>
+          <img class = "imagefit" src="../../../assets/barn5.jpg" alt="Random first slide">
+          <div class="carousel-caption">
+            <h3 class="myfont">Barnyard</h3>
+            <p class="myfont">A model of barnyard asset for games</p>
+            <button type="button" mat-button (click)="drawer.toggle()">
+                Toggle sidenav
+              </button>
+          </div>
+        </ng-template>
+        <ng-template ngbSlide>
+          <img  src="../../../assets/mall30005.jpg" alt="Random second slide">
+          <div class="carousel-caption">
+            <h3 class="myfont">Mall Design</h3>
+            <p class="myfont">A brief desing of a complex mall </p>
+          </div>
+        </ng-template>
+        <ng-template ngbSlide>
+          <img  src="../../../assets/japhouse_front.jpg" alt="Random third slide">
+          <div class="carousel-caption">
+            <h3 class="myfont">Japanese house</h3>
+            <p class="myfont">A medieval japanese house design</p>
+          </div>
+        </ng-template>
+        <ng-template ngbSlide>
+          <img class ="imagefit"  src="../../../assets/ship11.jpg" alt="Random third slide">
+          <div class="carousel-caption">
+      
+            <h3 class="myfont">Bismarck 1942</h3>
+            <p class="myfont">A german warship used in battle in 1942</p>
+          </div>
+        </ng-template>
+      </ngb-carousel>
+    
+  
+  </mat-drawer-container>
+
+
+<span class="example-spacer"></span>
+<mat-card class="myspacing">
+  <mat-card-title>Testing</mat-card-title>
+  <h1>Hello {{name}}</h1>
+  <ul>
+    <li>Age: {{age}}</li>
+    <li>Email: {{email}}</li>
+    <li>{{address.street}} {{address.city}}, {{address.state}}</li>
+  </ul>
+</mat-card>
+
+
+<mat-card class ="myspacingnew" >
+  <mat-card-title>Please fill in your details</mat-card-title>
+  <form>
+    <div>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Name:" [(ngModel)]="name" name="name">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Age:" type="number" [(ngModel)]="age" name="age">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="City:" type="text" [(ngModel)]="address.city" name="city">
+      </mat-form-field>
+    </div>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Street:" [(ngModel)]="address.street" name="street">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="State:" [(ngModel)]="address.state" name="state">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Email:" type="text" [(ngModel)]="email" name="email">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Password: " type="password"> 
+    </mat-form-field>
+  </form>
+
+  <h1>Hobbies</h1>
+
+  <form (submit)="addHobby(hobby.value )">
+    <div>
+      <label for="hobby">Hobby:</label>
+      <mat-form-field>
+          <input matInput type="text" #hobby>
+      </mat-form-field>
+    </div>
+    <button class ="mymargin" mat-raised-button color="primary" (click)= "addHobby(hobby.value)" >Add Hobby</button>
+  </form>
+  
+  <span matTooltip="Tooltip!"><button mat-raised-button (click)="openDialog()" >Dialog</button></span>
+  
+  <button mat-raised-button (click)="openSnackBar()" >Snackbar</button>
+  <mat-slider></mat-slider>
+
+  <table >
+    <li *ngFor="let hobby of hobbies; let i = index">
+      {{i+1}}:{{hobby}}
+      <button mat-raised-button color="accent" (click)="deleteHobby(hobby)">X</button>
+    </li>
+  </table>
+  <button mat-raised-button class ="picbutton" ><img height= "200px" width="200px" src ="../../../assets/simsc.svg" /></button>
+</mat-card>
+
+</body>
+
+<router-outlet></router-outlet>
